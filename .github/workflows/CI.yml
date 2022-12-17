@@ -28,4 +28,6 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
-        path: test
+        path: |
+          StringId32/**/*.exe
+          StringId64/*.exe
