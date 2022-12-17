@@ -21,7 +21,7 @@ int main(int argc, const char* aArgv[])
 	{
 		for( int i = 1; i < argc; i++)
 		{
-			printf("%s -> #%.16lX\n",aArgv[i] ,ToStringId64(aArgv[i]) );
+			printf("%s -> #%.16llX\n",aArgv[i] ,ToStringId64(aArgv[i]) );
 		}
 		return 0;
 	}
