@@ -24,3 +24,8 @@ jobs:
         cd "StringId64"
         gcc main.c -o t2.exe
         ./t2.exe "Hello World"
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        path: **/**/*.exe
