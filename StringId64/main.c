@@ -21,7 +21,11 @@ int main(int argc, const char* aArgv[])
 	{
 		for( int i = 1; i < argc; i++)
 		{
+#ifdef __WIN32__
 			printf("%s -> #%.16llX\n",aArgv[i] ,ToStringId64(aArgv[i]) );
+#else
+			printf("%s -> #%.16lX\n",aArgv[i] ,ToStringId64(aArgv[i]) );
+#endif
 		}
 		return 0;
 	}
