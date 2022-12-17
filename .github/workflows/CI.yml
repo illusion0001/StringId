@@ -3,7 +3,7 @@ name: CI
 on: [ push, pull_request ]
 
 jobs:
-  build:
+  build-win32:
     runs-on: windows-latest
     steps:
 
@@ -31,3 +31,25 @@ jobs:
         path: |
           StringId32/**/*.exe
           StringId64/*.exe
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Build and test CRC32 generation
+      run: |
+        cd "StringId32/Uncharted"
+        clang main.c
+        ./a.out "Hello World"
+        cd "../Uncharted Golden Abyss"
+        clang main.c
+        ./a.out "Hello World"
+
+    - name: Build and test FNV-1a generation
+      run: |
+        cd "StringId64"
+        clang main.c
+        ./a.out "Hello World"
