@@ -12,6 +12,7 @@ jobs:
 
     - name: Build and test CRC32 generation
       run: |
+        gcc -v
         cd "StringId32/Uncharted"
         gcc main.c -static -o UC.exe
         ./UC.exe "Hello World"
